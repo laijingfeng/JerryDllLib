@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReflectionHelper</name>
+    </assembly>
+    <members>
+        <member name="M:Jerry.ReflectionHelper.HasAttribute``1(System.Reflection.MemberInfo)">
+            <summary>
+            return Attribute.IsDefined(m, typeof(T));
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.HasAttribute``1(System.Type)">
+            <summary>
+            return Attribute.IsDefined(m, typeof(T));
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.GetAttribute``1(System.Reflection.MemberInfo)">
+            <summary>
+             return m.GetCustomAttributes(typeof(T), true).FirstOrDefault() as T;
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.GetAttribute``1(System.Type)">
+            <summary>
+             return m.GetCustomAttributes(typeof(T), true).FirstOrDefault() as T;
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.GetMemberType(System.Reflection.MemberInfo)">
+            <summary>
+            Returns the Return ValueType of the member
+            </summary>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.GetParamaterType(System.Reflection.MemberInfo)">
+            <summary>
+            Returns the Return ValueType of the member
+            </summary>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.SetStaticMemberValue(System.Type,System.String,System.Object[])">
+            <summary>
+            设置静态值
+            </summary>
+            <param name="type"></param>
+            <param name="memberName"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.SetNonStaticMemberValue(System.Object,System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="instance"></param>
+            <param name="memberName"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.SetMemberValue(System.Reflection.MemberInfo,System.Object,System.Object[])">
+            <summary>
+            Set the member value
+            </summary>
+            <param name="member"></param>
+            <param name="instance"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.GetStaticMemberValue(System.Type,System.String)">
+            <summary>
+            获取静态值
+            </summary>
+            <param name="type"></param>
+            <param name="memberName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.GetNonStaticMemberValue(System.Object,System.String)">
+            <summary>
+            Get member value
+            </summary>
+            <param name="instance"></param>
+            <param name="memberName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.GetMemberValue(System.Reflection.MemberInfo,System.Object)">
+            <summary>
+            Get member value
+            </summary>
+            <param name="member"></param>
+            <param name="instance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.ReflectionHelper.GetFlag">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
