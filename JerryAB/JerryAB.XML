@@ -167,15 +167,6 @@
             平台
             </summary>
         </member>
-        <member name="M:Jerry.BuildScript.FileNameFilter(System.String,System.Collections.Generic.List{System.String},System.Boolean)">
-            <summary>
-            文件名过滤
-            </summary>
-            <param name="fileName"></param>
-            <param name="fileNameFilter"></param>
-            <param name="include"></param>
-            <returns>通过</returns>
-        </member>
         <member name="T:Jerry.JABLoadOperation">
             <summary>
             <para>AssetBundle加载操作</para>
