@@ -4,6 +4,16 @@
         <name>JerryAB</name>
     </assembly>
     <members>
+        <member name="F:Jerry.JABUtil.CurPlatform">
+            <summary>
+            当前平台
+            </summary>
+        </member>
+        <member name="T:Jerry.JABUtil.JPlatformName">
+            <summary>
+            平台
+            </summary>
+        </member>
         <member name="T:Jerry.JABMgr">
             <summary>
             Class takes care of loading assetBundle and its dependencies automatically, loading variants automatically.
@@ -155,16 +165,6 @@
         <member name="F:Jerry.LoadedAssetBundle.m_ReferencedCount">
             <summary>
             引用计数
-            </summary>
-        </member>
-        <member name="F:Jerry.JABUtil.CurPlatform">
-            <summary>
-            当前平台
-            </summary>
-        </member>
-        <member name="T:Jerry.JABUtil.JPlatformName">
-            <summary>
-            平台
             </summary>
         </member>
         <member name="T:Jerry.JABLoadOperation">
