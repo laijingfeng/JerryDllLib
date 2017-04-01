@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>JerryDrawer</name>
+        <name>JerryDrawer_Editor</name>
     </assembly>
     <members>
         <member name="F:Jerry.DrawerElementBase._id">
