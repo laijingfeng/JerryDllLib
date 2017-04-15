@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>JerryAB-UNITY_EDITOR-UNITY_IOS</name>
+        <name>JerryAB-Editor</name>
     </assembly>
     <members>
         <member name="T:Jerry.JABMgr">
@@ -102,6 +102,13 @@
             <param name="isAdditive"></param>
             <returns></returns>
         </member>
+        <member name="M:Jerry.JABMgr.Init(System.Action{System.Boolean},Jerry.JABUtil.Platform)">
+            <summary>
+            
+            </summary>
+            <param name="callback"></param>
+            <param name="platformName">平台名，只有编辑器起作用，真机DLL自动识别</param>
+        </member>
         <member name="M:Jerry.JABMgr.LoadManifest">
             <summary>
             加载Manifest
@@ -160,6 +167,11 @@
         <member name="F:Jerry.JABUtil.CurPlatform">
             <summary>
             当前平台，决定AB的Manifest文件名
+            </summary>
+        </member>
+        <member name="T:Jerry.JABUtil.Platform">
+            <summary>
+            平台，决定AB的Manifest文件名
             </summary>
         </member>
         <member name="T:Jerry.JABLoadOperation">
