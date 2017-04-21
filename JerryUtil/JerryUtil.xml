@@ -4,6 +4,59 @@
         <name>JerryUtil</name>
     </assembly>
     <members>
+        <member name="M:Jerry.JerryMath.Contains(UnityEngine.Vector3[],UnityEngine.Vector3)">
+            <summary>
+            <para>计算点是否在一个区域内部</para>
+            <para>支持凸/凹多边形</para>
+            </summary>
+            <param name="point">至少3个点组成的区域.</param>
+            <param name="p">目标点.</param>
+        </member>
+        <member name="M:Jerry.JerryMath.LineLineIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            直线和直线相交
+            </summary>
+            <param name="intersection"></param>
+            <param name="linePoint1"></param>
+            <param name="lineVec1"></param>
+            <param name="linePoint2"></param>
+            <param name="lineVec2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JerryMath.LineSegmentPlaneIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            线段与平面相交
+            </summary>
+            <param name="intersection"></param>
+            <param name="linePoint1"></param>
+            <param name="linePoint2"></param>
+            <param name="planeNormal"></param>
+            <param name="planePoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JerryMath.LinePlaneIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            直线与平面相交
+            </summary>
+            <param name="intersection"></param>
+            <param name="linePoint1"></param>
+            <param name="linePoint2"></param>
+            <param name="planeNormal"></param>
+            <param name="planePoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JerryMath.PointOnWhichSideOfLineSegment(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            <para>点在线段的位置</para>
+            <para>Returns 0 if point is on the line segment.</para>
+            <para>Returns 1 if point is outside of the line segment and located on the side of linePoint1.</para>
+            <para>Returns 2 if point is outside of the line segment and located on the side of linePoint2.</para>
+            </summary>
+            <param name="linePoint1"></param>
+            <param name="linePoint2"></param>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
         <member name="M:Jerry.JerryUtil.CloneGo(Jerry.JerryUtil.CloneGoData)">
             <summary>
             克隆对象
@@ -156,22 +209,6 @@
             <param name="everythingOrNothing"></param>
             <returns></returns>
         </member>
-        <member name="M:Jerry.JerryUtil.MakeLayerMask(System.Int32[],System.Boolean)">
-            <summary>
-            通过id构造LayerMask
-            </summary>
-            <param name="ids">id组</param>
-            <param name="invert">是否反转</param>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JerryUtil.MakeLayerMask(System.String[],System.Boolean)">
-            <summary>
-            通过name构造LayerMask
-            </summary>
-            <param name="names">名称组</param>
-            <param name="invert">是否反转</param>
-            <returns></returns>
-        </member>
         <member name="M:Jerry.JerryUtil.MakeLayerMask(System.Int32,System.String[],System.String[])">
             <summary>
             通过name构造LayerMask
@@ -188,6 +225,14 @@
             <param name="oldLayerMask">旧的layerMask</param>
             <param name="addNames">增加的</param>
             <param name="subNames">减去的</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JerryUtil.LayerMaskContainAny(System.Int32,System.Int32[])">
+            <summary>
+            包含
+            </summary>
+            <param name="mask"></param>
+            <param name="check"></param>
             <returns></returns>
         </member>
         <member name="F:Jerry.JerryUtil.CloneGoData.prefab">
@@ -229,59 +274,6 @@
             <summary>
             激活
             </summary>
-        </member>
-        <member name="M:Jerry.JerryMath.Contains(UnityEngine.Vector3[],UnityEngine.Vector3)">
-            <summary>
-            <para>计算点是否在一个区域内部</para>
-            <para>支持凸/凹多边形</para>
-            </summary>
-            <param name="point">至少3个点组成的区域.</param>
-            <param name="p">目标点.</param>
-        </member>
-        <member name="M:Jerry.JerryMath.LineLineIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
-            <summary>
-            直线和直线相交
-            </summary>
-            <param name="intersection"></param>
-            <param name="linePoint1"></param>
-            <param name="lineVec1"></param>
-            <param name="linePoint2"></param>
-            <param name="lineVec2"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JerryMath.LineSegmentPlaneIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
-            <summary>
-            线段与平面相交
-            </summary>
-            <param name="intersection"></param>
-            <param name="linePoint1"></param>
-            <param name="linePoint2"></param>
-            <param name="planeNormal"></param>
-            <param name="planePoint"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JerryMath.LinePlaneIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
-            <summary>
-            直线与平面相交
-            </summary>
-            <param name="intersection"></param>
-            <param name="linePoint1"></param>
-            <param name="linePoint2"></param>
-            <param name="planeNormal"></param>
-            <param name="planePoint"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JerryMath.PointOnWhichSideOfLineSegment(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
-            <summary>
-            <para>点在线段的位置</para>
-            <para>Returns 0 if point is on the line segment.</para>
-            <para>Returns 1 if point is outside of the line segment and located on the side of linePoint1.</para>
-            <para>Returns 2 if point is outside of the line segment and located on the side of linePoint2.</para>
-            </summary>
-            <param name="linePoint1"></param>
-            <param name="linePoint2"></param>
-            <param name="point"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>
