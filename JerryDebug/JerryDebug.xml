@@ -75,9 +75,14 @@
             是否显示最新的
             </summary>
         </member>
-        <member name="F:Jerry.JerryDebug.m_Help">
+        <member name="F:Jerry.JerryDebug.m_ShowSetting">
             <summary>
-            是否显示帮助
+            设置是否显示
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebug.m_IsFold">
+            <summary>
+            是否隐藏
             </summary>
         </member>
         <member name="F:Jerry.JerryDebug.m_ShowError">
@@ -95,14 +100,14 @@
             是否显示普通信息
             </summary>
         </member>
-        <member name="F:Jerry.JerryDebug.m_rect">
+        <member name="F:Jerry.JerryDebug.m_rectMain">
             <summary>
-            窗口大小
+            主窗口大小
             </summary>
         </member>
-        <member name="F:Jerry.JerryDebug.m_recHelp">
+        <member name="F:Jerry.JerryDebug.m_recSetting">
             <summary>
-            帮助面板大小
+            设置面板大小
             </summary>
         </member>
         <member name="M:Jerry.JerryDebug.Set(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
@@ -115,28 +120,28 @@
             <param name="isNowEditor"></param>
             <param name="onlyUseInEditor"></param>
         </member>
-        <member name="M:Jerry.JerryDebug.LogInfo(System.Object,Jerry.JerryDebug.LogChannel,System.Boolean)">
+        <member name="M:Jerry.JerryDebug.LogInfo(System.Object,Jerry.JerryDebug.LogTag,System.Boolean)">
             <summary>
             LOG
             </summary>
             <param name="msg"></param>
-            <param name="type"></param>
+            <param name="tag"></param>
             <param name="isProtoMsg"></param>
         </member>
-        <member name="M:Jerry.JerryDebug.LogWarn(System.Object,Jerry.JerryDebug.LogChannel,System.Boolean)">
+        <member name="M:Jerry.JerryDebug.LogWarn(System.Object,Jerry.JerryDebug.LogTag,System.Boolean)">
             <summary>
             LOG
             </summary>
             <param name="msg"></param>
-            <param name="type"></param>
+            <param name="tag"></param>
             <param name="isProtoMsg"></param>
         </member>
-        <member name="M:Jerry.JerryDebug.LogError(System.Object,Jerry.JerryDebug.LogChannel,System.Boolean)">
+        <member name="M:Jerry.JerryDebug.LogError(System.Object,Jerry.JerryDebug.LogTag,System.Boolean)">
             <summary>
             LOG
             </summary>
             <param name="msg"></param>
-            <param name="type"></param>
+            <param name="tag"></param>
             <param name="isProtoMsg"></param>
         </member>
         <member name="M:Jerry.JerryDebug.PrintList(System.Collections.IList,System.Int32)">
@@ -146,12 +151,13 @@
             <param name="list"></param>
             <param name="indent"></param>
         </member>
-        <member name="M:Jerry.JerryDebug.AddLog(System.Object,Jerry.JerryDebug.LogType,Jerry.JerryDebug.LogChannel,System.Boolean)">
+        <member name="M:Jerry.JerryDebug.AddLog(System.Object,Jerry.JerryDebug.LogType,Jerry.JerryDebug.LogTag,System.Boolean)">
             <summary>
             AddLog
             </summary>
             <param name="msg"></param>
             <param name="logType"></param>
+            <param name="tag"></param>
             <param name="isProtoMsg"></param>
         </member>
         <member name="M:Jerry.JerryDebug.AddToFile(System.String)">
@@ -160,19 +166,40 @@
             </summary>
             <param name="strMsg"></param>
         </member>
+        <member name="F:Jerry.JerryDebug._typeOfProtoMemberAttribute">
+            <summary>
+            typeof(ProtoBuf.ProtoMemberAttribute)
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebug.m_rectFloat">
+            <summary>
+            悬浮窗
+            </summary>
+        </member>
         <member name="M:Jerry.JerryDebug.FillBottomCtr">
             <summary>
             填充下面操作
             </summary>
         </member>
-        <member name="M:Jerry.JerryDebug.RefreshUI(System.Int32)">
+        <member name="F:Jerry.JerryDebug.CtrAction">
             <summary>
-            刷新信息
+            当前配置
             </summary>
         </member>
-        <member name="F:Jerry.JerryDebug._typeOfProtoMemberAttribute">
+        <member name="M:Jerry.JerryDebug.AddSysAction">
             <summary>
-            typeof(ProtoBuf.ProtoMemberAttribute)
+            增加系统配置
+            </summary>
+        </member>
+        <member name="M:Jerry.JerryDebug.RefreshSettingUI(System.Int32)">
+            <summary>
+            刷新设置界面
+            </summary>
+            <param name="iWindowID"></param>
+        </member>
+        <member name="M:Jerry.JerryDebug.RefreshMainUI(System.Int32)">
+            <summary>
+            刷新主界面
             </summary>
         </member>
         <member name="T:Jerry.JerryDebug.LogType">
@@ -198,6 +225,11 @@
         <member name="T:Jerry.JerryDebug.MsgInfo">
             <summary>
             消息信息
+            </summary>
+        </member>
+        <member name="T:Jerry.JerryDebug.ExtenActionConfig">
+            <summary>
+            扩展配置
             </summary>
         </member>
     </members>
