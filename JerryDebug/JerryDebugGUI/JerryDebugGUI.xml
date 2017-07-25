@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JerryDebugGUI</name>
+    </assembly>
+    <members>
+        <member name="F:Jerry.JerryDebugGUI.MAX_MSG_CNT">
+            <summary>
+            单类最大日志量
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_oneHeight">
+            <summary>
+            低端控制按钮高度
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_DoOnGUI">
+            <summary>
+            刷新OnGUI
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_LogDeleteByTime">
+            <summary>
+            多余日志按时间顺序删除
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_listMsgList">
+            <summary>
+            消息列表
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_vtScrollView">
+            <summary>
+            Log面板当前浏览进度
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_ShowNewer">
+            <summary>
+            是否显示最新的
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_ShowSetting">
+            <summary>
+            设置是否显示
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_IsFold">
+            <summary>
+            是否隐藏
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_ShowError">
+            <summary>
+            是否显示错误
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_ShowWarning">
+            <summary>
+            是否显示警告
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_ShowInfo">
+            <summary>
+            是否显示普通信息
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_rectMain">
+            <summary>
+            主窗口大小
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_recSetting">
+            <summary>
+            设置面板大小
+            </summary>
+        </member>
+        <member name="M:Jerry.JerryDebugGUI.LogInfo(System.Object,Jerry.Enum_LogTag,System.Boolean)">
+            <summary>
+            LOG
+            </summary>
+            <param name="msg"></param>
+            <param name="tag"></param>
+            <param name="isProtoMsg"></param>
+        </member>
+        <member name="M:Jerry.JerryDebugGUI.LogWarn(System.Object,Jerry.Enum_LogTag,System.Boolean)">
+            <summary>
+            LOG
+            </summary>
+            <param name="msg"></param>
+            <param name="tag"></param>
+            <param name="isProtoMsg"></param>
+        </member>
+        <member name="M:Jerry.JerryDebugGUI.LogError(System.Object,Jerry.Enum_LogTag,System.Boolean)">
+            <summary>
+            LOG
+            </summary>
+            <param name="msg"></param>
+            <param name="tag"></param>
+            <param name="isProtoMsg"></param>
+        </member>
+        <member name="M:Jerry.JerryDebugGUI.Set(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="outConsole"></param>
+            <param name="outScreen"></param>
+            <param name="outFile"></param>
+            <param name="isNowEditor"></param>
+            <param name="onlyUseInEditor"></param>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.m_rectFloat">
+            <summary>
+            悬浮窗
+            </summary>
+        </member>
+        <member name="M:Jerry.JerryDebugGUI.FillBottomCtr">
+            <summary>
+            填充下面操作
+            </summary>
+        </member>
+        <member name="F:Jerry.JerryDebugGUI.CtrAction">
+            <summary>
+            当前配置
+            </summary>
+        </member>
+        <member name="M:Jerry.JerryDebugGUI.AddSysAction">
+            <summary>
+            增加系统配置
+            </summary>
+        </member>
+        <member name="M:Jerry.JerryDebugGUI.RefreshSettingUI(System.Int32)">
+            <summary>
+            刷新设置界面
+            </summary>
+            <param name="iWindowID"></param>
+        </member>
+        <member name="M:Jerry.JerryDebugGUI.RefreshMainUI(System.Int32)">
+            <summary>
+            刷新主界面
+            </summary>
+        </member>
+        <member name="T:Jerry.JerryDebugGUI.MsgInfo">
+            <summary>
+            消息信息
+            </summary>
+        </member>
+        <member name="T:Jerry.JerryDebugGUI.ExtenActionConfig">
+            <summary>
+            扩展配置
+            </summary>
+        </member>
+    </members>
+</doc>
