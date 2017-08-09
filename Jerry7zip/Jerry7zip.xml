@@ -4,16 +4,20 @@
         <name>Jerry7zip</name>
     </assembly>
     <members>
-        <member name="F:MultiCompressBase`1.processorCount">
+        <member name="T:CompressMono">
             <summary>
-            系统的核数
+            文件压缩逻辑
             </summary>
         </member>
-        <member name="M:MultiCompressBase`1.SetCallback(CompressCallback)">
+        <member name="M:CompressMono.CompressFile(System.String,System.String,System.Action{System.Int64,System.Int64},System.Action{System.Boolean})">
             <summary>
-            设置回调
+            压缩文件
             </summary>
-            <param name="callback"></param>
+        </member>
+        <member name="M:CompressMono.DoCompressFileLZMA">
+            <summary>
+            使用LZMA算法压缩文件  
+            </summary>
         </member>
         <member name="M:SevenZip.ICoder.Code(System.IO.Stream,System.IO.Stream,System.Int64,System.Int64,SevenZip.ICodeProgress)">
             <summary>
@@ -37,6 +41,17 @@
             <exception cref="T:SevenZip.DataErrorException">
             if input stream is not valid
             </exception>
+        </member>
+        <member name="F:MultiCompressBase`1.processorCount">
+            <summary>
+            系统的核数
+            </summary>
+        </member>
+        <member name="M:MultiCompressBase`1.SetCallback(CompressCallback)">
+            <summary>
+            设置回调
+            </summary>
+            <param name="callback"></param>
         </member>
         <member name="T:SevenZip.DataErrorException">
             <summary>
@@ -145,21 +160,6 @@
         <member name="M:CompressUtil.GetDefaultFileName(System.String)">
             <summary>
             获得默认文件名
-            </summary>
-        </member>
-        <member name="T:CompressMono">
-            <summary>
-            文件压缩逻辑
-            </summary>
-        </member>
-        <member name="M:CompressMono.CompressFile(System.String,System.String,System.Action{System.Int64,System.Int64},System.Action{System.Boolean})">
-            <summary>
-            压缩文件
-            </summary>
-        </member>
-        <member name="M:CompressMono.DoCompressFileLZMA">
-            <summary>
-            使用LZMA算法压缩文件  
             </summary>
         </member>
     </members>
