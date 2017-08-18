@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ParticleSystemPreview</name>
+    </assembly>
+    <members>
+        <member name="M:ParticleSystemPreview.OnDestroy">
+            <summary>
+            最后的销毁方法
+            不能被Unity自动调用，目前只能在点下一个对象时，调用销毁
+            </summary>
+        </member>
+        <member name="M:ParticleSystemPreview.SimulateEnable">
+            <summary>
+            模拟-开启
+            </summary>
+        </member>
+        <member name="M:ParticleSystemPreview.SimulateDisable">
+            <summary>
+            模拟-停止
+            </summary>
+        </member>
+        <member name="M:ParticleSystemPreview.SimulateUpdate">
+            <summary>
+            模拟-更新方法
+            锁定粒子方式的话，只需要刷新编辑器即可
+            </summary>
+        </member>
+        <member name="M:ParticleSystemPreview.SetSimulateMode">
+            <summary>
+            设置模拟方式
+            一种直接调用Simulate方法，效果跟直接运行播放不一定一样
+            一种调用锁定粒子，再调用play方法，效果跟直接运行播放一样
+            </summary>
+        </member>
+        <member name="M:ParticleSystemPreview.ClearLockedParticle">
+            <summary>
+            解锁粒子
+            </summary>
+        </member>
+        <member name="M:ParticleSystemPreview.DoAvatarPreviewFrame(UnityEngine.Event,UnityEngine.EventType,UnityEngine.Rect)">
+            <summary>
+            定位事件
+            按F近距离查看对象
+            按G视图平移到鼠标位置
+            </summary>
+            <param name="evt"></param>
+            <param name="type"></param>
+            <param name="previewRect"></param>
+        </member>
+        <member name="T:ParticleSystemPreview.ViewTool">
+            <summary>
+            视图工具
+            </summary>
+        </member>
+        <member name="F:ParticleSystemPreview.ViewTool.Pan">
+            <summary>
+            平移
+            </summary>
+        </member>
+        <member name="F:ParticleSystemPreview.ViewTool.Zoom">
+            <summary>
+            缩放
+            </summary>
+        </member>
+        <member name="F:ParticleSystemPreview.ViewTool.Orbit">
+            <summary>
+            旋转
+            </summary>
+        </member>
+    </members>
+</doc>
