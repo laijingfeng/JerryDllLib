@@ -4,7 +4,46 @@
         <name>JerryPB</name>
     </assembly>
     <members>
-        <member name="T:Jerry.TableManager`4">
+        <member name="F:Jerry.TblLoader._tblMgrs">
+            <summary>
+            表格管理器
+            </summary>
+        </member>
+        <member name="F:Jerry.TblLoader._allTblComplete">
+            <summary>
+            所有表格(加载并)处理完成
+            </summary>
+        </member>
+        <member name="F:Jerry.TblLoader._tblHandlingCnt">
+            <summary>
+            正在处理的表格数量
+            </summary>
+        </member>
+        <member name="M:Jerry.TblLoader.LoadTables(System.Action)">
+            <summary>
+            加载表格
+            </summary>
+            <param name="allTblComplete"></param>
+        </member>
+        <member name="M:Jerry.TblLoader.IE_LoadTables">
+            <summary>
+            进行加载表格
+            </summary>
+            <param name="allTblComplete"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jerry.ITblMgr">
+            <summary>
+            表格管理接口
+            </summary>
+        </member>
+        <member name="M:Jerry.ITblMgr.SetHandledCallback(System.Action)">
+            <summary>
+            设置(解析)处理完成回调，内部使用
+            </summary>
+            <param name="callback">回调</param>
+        </member>
+        <member name="T:Jerry.TblMgr`4">
             <summary>
             表格管理
             </summary>
@@ -13,64 +52,71 @@
             <typeparam name="K">键值</typeparam>
             <typeparam name="T_1">具体表管理器类名</typeparam>
         </member>
-        <member name="F:Jerry.TableManager`4.array">
-            <summary>
-            表组
-            </summary>
-        </member>
-        <member name="F:Jerry.TableManager`4.key">
-            <summary>
-            键
-            </summary>
-        </member>
-        <member name="F:Jerry.TableManager`4.dic">
+        <member name="F:Jerry.TblMgr`4.dic">
             <summary>
             数据
             </summary>
         </member>
-        <member name="M:Jerry.TableManager`4.GetEnumerator">
+        <member name="M:Jerry.TblMgr`4.Init">
+            <summary>
+            空函数，只是给实例化的时候调用一下
+            </summary>
+        </member>
+        <member name="M:Jerry.TblMgr`4.GetEnumerator">
             <summary>
             获得枚举器
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Jerry.TableManager`4.AddTable(`1)">
+        <member name="M:Jerry.TblMgr`4.TryGetValue(`2,System.Boolean)">
+            <summary>
+            查表
+            </summary>
+            <param name="key">键值</param>
+            <param name="printNoDataLog">查找失败是否打印，有些知道确实可能不存在的可置为false</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.TblMgr`4.HasTbl(`2)">
+            <summary>
+            表是否存在
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.TblMgr`4.AddTable(`1)">
             <summary>
             增加表
             </summary>
             <param name="table"></param>
         </member>
-        <member name="M:Jerry.TableManager`4.GetKey(`1)">
+        <member name="M:Jerry.TblMgr`4.GetKey(`1)">
             <summary>
             获取键值
             </summary>
             <param name="table"></param>
             <returns></returns>
         </member>
-        <member name="M:Jerry.TableManager`4.TryGetValue(`2,`1@)">
-            <summary>
-            查表
-            </summary>
-            <param name="key">键值</param>
-            <param name="tbl">返回的表</param>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.TableManager`4.PostProcess(`1)">
-            <summary>
-            处理完一行数据
-            </summary>
-            <param name="table"></param>
-        </member>
-        <member name="M:Jerry.TableManager`4.OnTblComplete">
-            <summary>
-            处理完所有行数据
-            </summary>
-        </member>
-        <member name="M:Jerry.TableManager`4.OnResLoaded(UnityEngine.TextAsset)">
+        <member name="M:Jerry.TblMgr`4.OnResLoaded(UnityEngine.TextAsset)">
             <summary>
             表格加载成功回调
             </summary>
             <param name="res"></param>
+        </member>
+        <member name="M:Jerry.TblMgr`4.LoadRes">
+            <summary>
+            加载资源
+            </summary>
+        </member>
+        <member name="F:Jerry.TblMgr`4.onTblHandled">
+            <summary>
+            表格所有行处理完成
+            </summary>
+        </member>
+        <member name="M:Jerry.TblMgr`4.SetHandledCallback(System.Action)">
+            <summary>
+            设置(解析)处理完成回调，内部使用
+            </summary>
+            <param name="callback"></param>
         </member>
     </members>
 </doc>
