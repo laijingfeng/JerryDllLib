@@ -4,55 +4,35 @@
         <name>JerryCoroutine</name>
     </assembly>
     <members>
-        <member name="T:Jerry.CoroutineTask">
+        <member name="M:Jerry.Yielders.ClearWaitForSeconds">
             <summary>
-            A Task object represents a coroutine.  Tasks can be started, paused, and stopped.
-            It is an error to attempt to start a task that has been stopped or which has
-            naturally terminated.
+            切场景的时候可以清理一次
             </summary>
         </member>
-        <member name="M:Jerry.CoroutineTask.#ctor(System.Collections.IEnumerator,System.Boolean)">
-             <summary>
-             Creates a new Task object for the given coroutine.
-            
-             If autoStart is true (default) the task is automatically started
-             upon construction.
-             </summary>
-             <param name="c"></param>
-             <param name="autoStart"></param>
-        </member>
-        <member name="M:Jerry.CoroutineTask.Start">
+        <member name="F:Jerry.JerryCoroutine.CorTask.endCallback">
             <summary>
-            Begins execution of the coroutine
+            是否是手动停止的
             </summary>
         </member>
-        <member name="M:Jerry.CoroutineTask.Stop">
+        <member name="F:Jerry.JerryCoroutine.CorTask.running">
             <summary>
-            Discontinues execution of the coroutine at its next yield.
+            运行中，暂停也是运行中
             </summary>
         </member>
-        <member name="P:Jerry.CoroutineTask.Running">
+        <member name="F:Jerry.JerryCoroutine.CorTask.paused">
             <summary>
-            Returns true if and only if the coroutine is running.  Paused tasks
-            are considered to be running.
+            是否被暂停
             </summary>
         </member>
-        <member name="P:Jerry.CoroutineTask.Paused">
+        <member name="F:Jerry.JerryCoroutine.CorTask.stopped">
             <summary>
-            Returns true if and only if the coroutine is currently paused.
+            是否是手动停止了
             </summary>
         </member>
-        <member name="E:Jerry.CoroutineTask.Finished">
+        <member name="F:Jerry.JerryCoroutine.CorTask.used">
             <summary>
-            Termination event. Triggered when the coroutine completes execution.
+            使用过，不能重复使用
             </summary>
-        </member>
-        <member name="T:Jerry.CoroutineTask.FinishedHandler">
-            <summary>
-            Delegate for termination subscribers. manual is true if and only if
-            the coroutine was stopped with an explicit call to Stop().
-            </summary>
-            <param name="manual"></param>
         </member>
     </members>
 </doc>
