@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ResFinder-Editor</name>
+    </assembly>
+    <members>
+        <member name="F:ResFinder.findPath">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="F:ResFinder.withName">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="F:ResFinder.withBundle">
+            <summary>
+            Bundle
+            </summary>
+        </member>
+        <member name="F:ResFinder.withPostfix">
+            <summary>
+            后缀
+            </summary>
+        </member>
+        <member name="F:ResFinder.results">
+            <summary>
+            查找结果
+            </summary>
+        </member>
+        <member name="M:ResFinder.CheckName(System.String,System.String)">
+            <summary>
+            名字匹配
+            </summary>
+            <param name="checkName"></param>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ResFinder.GrammarPass(System.String)">
+            <summary>
+            语法检测
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ResFinder.GetOneLogicPiece(System.String)">
+            <summary>
+            获取一个逻辑语句
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RefFinder-Editor</name>
+    </assembly>
+    <members>
+        <member name="F:FinderViewBase.fromType">
+            <summary>
+            构造的时候要设置
+            </summary>
+        </member>
+        <member name="T:GuidPath">
+            <summary>
+            通用，GUID查找
+            </summary>
+        </member>
+    </members>
+</doc>
