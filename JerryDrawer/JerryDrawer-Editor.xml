@@ -65,7 +65,7 @@
         </member>
         <member name="F:Jerry.DrawerElementGrid._minPos">
             <summary>
-            左下角位置
+            左下角位置，只有Global的时候有效
             </summary>
         </member>
         <member name="F:Jerry.DrawerElementGrid._size">
