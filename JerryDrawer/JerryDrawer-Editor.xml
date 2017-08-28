@@ -58,6 +58,11 @@
             </summary>
             <returns>是否继续往子类传递</returns>
         </member>
+        <member name="F:Jerry.DrawerElementLabel._useVectorPoint">
+            <summary>
+            点使用Vector而不是Transform
+            </summary>
+        </member>
         <member name="F:Jerry.DrawerElementPath._useVectorPoint">
             <summary>
             点使用Vector而不是Transform
@@ -89,11 +94,6 @@
             </summary>
         </member>
         <member name="F:Jerry.DrawerElementCube._useVectorPoint">
-            <summary>
-            点使用Vector而不是Transform
-            </summary>
-        </member>
-        <member name="F:Jerry.DrawerElementLabel._useVectorPoint">
             <summary>
             点使用Vector而不是Transform
             </summary>
