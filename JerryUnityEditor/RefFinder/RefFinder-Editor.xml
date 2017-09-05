@@ -14,5 +14,10 @@
             构造的时候要设置
             </summary>
         </member>
+        <member name="F:FinderViewPath.newObject">
+            <summary>
+            替换成新的对象
+            </summary>
+        </member>
     </members>
 </doc>
