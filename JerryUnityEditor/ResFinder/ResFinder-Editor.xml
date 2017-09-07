@@ -4,30 +4,6 @@
         <name>ResFinder-Editor</name>
     </assembly>
     <members>
-        <member name="T:StringLogicJudge">
-            <summary>
-            字符串逻辑运算
-            </summary>
-        </member>
-        <member name="M:StringLogicJudge.GetOneLogicPiece(System.String)">
-            <summary>
-            获取一个逻辑语句
-            </summary>
-            <param name="filter"></param>
-            <returns></returns>
-        </member>
-        <member name="F:StringLogicJudge.m_oks">
-            <summary>
-            搜索串能包含的字符，再加0-9/a-z/A-Z/汉字
-            </summary>
-        </member>
-        <member name="M:StringLogicJudge.GrammarPass(System.String)">
-            <summary>
-            语法检测
-            </summary>
-            <param name="filter"></param>
-            <returns></returns>
-        </member>
         <member name="F:ResFinder.findPath">
             <summary>
             路径
@@ -53,6 +29,13 @@
             查找结果
             </summary>
         </member>
+        <member name="M:EditorCoroutineLooper.StartLoop(UnityEngine.Object,System.Collections.IEnumerator)">
+            <summary>
+            开启Loop
+            </summary>
+            <param name="mb">脚本</param>
+            <param name="iterator">方法</param>
+        </member>
         <member name="M:EditorUtil.GetFiles(System.Collections.Generic.List{System.String},System.String)">
             <summary>
             
@@ -61,12 +44,29 @@
             <param name="searchPattern">例如:*.cs</param>
             <returns></returns>
         </member>
-        <member name="M:EditorCoroutineLooper.StartLoop(UnityEngine.Object,System.Collections.IEnumerator)">
+        <member name="T:StringLogicJudge">
             <summary>
-            开启Loop
+            字符串逻辑运算
             </summary>
-            <param name="mb">脚本</param>
-            <param name="iterator">方法</param>
+        </member>
+        <member name="M:StringLogicJudge.GetOneLogicPiece(System.String)">
+            <summary>
+            获取一个逻辑语句
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="F:StringLogicJudge.m_oks">
+            <summary>
+            搜索串能包含的字符，再加0-9/a-z/A-Z/汉字
+            </summary>
+        </member>
+        <member name="M:StringLogicJudge.GrammarPass(System.String)">
+            <summary>
+            语法检测
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>
