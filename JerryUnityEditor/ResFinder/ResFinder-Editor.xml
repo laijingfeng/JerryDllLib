@@ -4,46 +4,6 @@
         <name>ResFinder-Editor</name>
     </assembly>
     <members>
-        <member name="F:ResFinder.findPath">
-            <summary>
-            路径
-            </summary>
-        </member>
-        <member name="F:ResFinder.withName">
-            <summary>
-            名字
-            </summary>
-        </member>
-        <member name="F:ResFinder.withBundle">
-            <summary>
-            Bundle
-            </summary>
-        </member>
-        <member name="F:ResFinder.withPostfix">
-            <summary>
-            后缀
-            </summary>
-        </member>
-        <member name="F:ResFinder.results">
-            <summary>
-            查找结果
-            </summary>
-        </member>
-        <member name="M:EditorCoroutineLooper.StartLoop(UnityEngine.Object,System.Collections.IEnumerator)">
-            <summary>
-            开启Loop
-            </summary>
-            <param name="mb">脚本</param>
-            <param name="iterator">方法</param>
-        </member>
-        <member name="M:EditorUtil.GetFiles(System.Collections.Generic.List{System.String},System.String)">
-            <summary>
-            
-            </summary>
-            <param name="paths"></param>
-            <param name="searchPattern">例如:*.cs</param>
-            <returns></returns>
-        </member>
         <member name="T:StringLogicJudge">
             <summary>
             字符串逻辑运算
@@ -67,6 +27,51 @@
             </summary>
             <param name="filter"></param>
             <returns></returns>
+        </member>
+        <member name="F:ResFinder.findPath">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="F:ResFinder.pathFilter">
+            <summary>
+            过滤路径
+            </summary>
+        </member>
+        <member name="F:ResFinder.withName">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="F:ResFinder.withBundle">
+            <summary>
+            Bundle
+            </summary>
+        </member>
+        <member name="F:ResFinder.withPostfix">
+            <summary>
+            后缀
+            </summary>
+        </member>
+        <member name="F:ResFinder.results">
+            <summary>
+            查找结果
+            </summary>
+        </member>
+        <member name="M:EditorUtil.GetFiles(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="paths"></param>
+            <param name="searchPattern">例如:*.cs</param>
+            <returns></returns>
+        </member>
+        <member name="M:EditorCoroutineLooper.StartLoop(UnityEngine.Object,System.Collections.IEnumerator)">
+            <summary>
+            开启Loop
+            </summary>
+            <param name="mb">脚本</param>
+            <param name="iterator">方法</param>
         </member>
     </members>
 </doc>
