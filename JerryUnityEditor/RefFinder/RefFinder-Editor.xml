@@ -4,11 +4,6 @@
         <name>RefFinder-Editor</name>
     </assembly>
     <members>
-        <member name="T:GuidPath">
-            <summary>
-            通用，GUID查找
-            </summary>
-        </member>
         <member name="F:FinderViewBase.fromType">
             <summary>
             构造的时候要设置
@@ -17,6 +12,11 @@
         <member name="F:FinderViewPath.newObject">
             <summary>
             替换成新的对象
+            </summary>
+        </member>
+        <member name="T:GuidPath">
+            <summary>
+            通用，GUID查找
             </summary>
         </member>
     </members>
