@@ -1,5 +1,0 @@
-∑÷¿‡£∫
-- JerryDebugGUI
-
-“¿¿µ£∫
-- JerryDebug

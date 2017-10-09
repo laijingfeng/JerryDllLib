@@ -56,11 +56,6 @@
             <para>特别是想复用之前的Prefab，有些细微配置不一样，可以用RefreshDatas而不用DoInit</para>
             </summary>
         </member>
-        <member name="P:Jerry.LayoutEditor.DirLen">
-            <summary>
-            方向总长度（Item数）
-            </summary>
-        </member>
         <member name="F:Jerry.InfinitelyGridLayoutGroup`2.curFirstIdx">
             <summary>
             视野内的元素开始的编号
