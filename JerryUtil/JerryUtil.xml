@@ -243,6 +243,18 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Jerry.JerryUtil.RefreshShader(UnityEngine.GameObject)">
+            <summary>
+            刷新Shader
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Jerry.JerryUtil.RefreshShader(UnityEngine.Material)">
+            <summary>
+            刷新Shader
+            </summary>
+            <param name="mat"></param>
+        </member>
         <member name="F:Jerry.JerryUtil.CloneGoData.prefab">
             <summary>
             预设
