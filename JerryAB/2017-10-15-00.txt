@@ -1,0 +1,9 @@
+Unity5.3.4f1
+
+依赖：
+- Singleton
+- JerryUtil
+- JerryCoroutine
+
+版本：
+只有一个版本，通用
