@@ -4,103 +4,6 @@
         <name>JerryAB</name>
     </assembly>
     <members>
-        <member name="T:Jerry.BundleInfo">
-            <summary>
-            Bundle信息
-            </summary>
-        </member>
-        <member name="F:Jerry.BundleInfo.bundleName">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="F:Jerry.BundleInfo.bundleSize">
-            <summary>
-            大小
-            </summary>
-        </member>
-        <member name="F:Jerry.BundleInfo.hash">
-            <summary>
-            Hash
-            </summary>
-        </member>
-        <member name="F:Jerry.BundleInfo.packageLev">
-            <summary>
-            分包等级
-            </summary>
-        </member>
-        <member name="M:Jerry.BundleInfo.ToStr">
-            <summary>
-            整理成存档字符串
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:Jerry.BundleInfoMgr">
-            <summary>
-            Bundle信息管理
-            </summary>
-        </member>
-        <member name="F:Jerry.BundleInfoMgr.m_InfoList">
-            <summary>
-            信息列表
-            </summary>
-        </member>
-        <member name="F:Jerry.BundleInfoMgr.m_VersionFileName">
-            <summary>
-            版本信息文件名
-            </summary>
-        </member>
-        <member name="F:Jerry.BundleInfoMgr.m_Version">
-            <summary>
-            本地资源版本号，首包不含资源就用这个
-            </summary>
-        </member>
-        <member name="F:Jerry.BundleInfoMgr.m_CurPackageLev">
-            <summary>
-            当前分包等级
-            </summary>
-        </member>
-        <member name="F:Jerry.BundleInfoMgr.isDirty">
-            <summary>
-            是否有未存档数据
-            </summary>
-        </member>
-        <member name="M:Jerry.BundleInfoMgr.ChangePackageLev(System.Int32,System.Boolean)">
-            <summary>
-            下载完才能修改
-            </summary>
-            <param name="lev"></param>
-            <param name="trySave"></param>
-        </member>
-        <member name="M:Jerry.BundleInfoMgr.ChangeOrAddData(Jerry.BundleInfo,System.Boolean)">
-            <summary>
-            修改或增加数据
-            </summary>
-            <param name="info"></param>
-        </member>
-        <member name="M:Jerry.BundleInfoMgr.SaveData(System.Boolean)">
-            <summary>
-            保存数据
-            </summary>
-            <param name="force"></param>
-        </member>
-        <member name="M:Jerry.BundleInfoMgr.CheckFirstPackage">
-            <summary>
-            检查首包
-            </summary>
-            <returns>是否是第一次整理资源</returns>
-        </member>
-        <member name="M:Jerry.BundleInfoMgr.LoadInfoList(System.String[])">
-            <summary>
-            加载数据
-            </summary>
-            <param name="readFiles"></param>
-        </member>
-        <member name="P:Jerry.BundleInfoMgr.InfoList">
-            <summary>
-            信息列表
-            </summary>
-        </member>
         <member name="T:Jerry.JABMgr">
             <summary>
             AssetBundle管理器
@@ -115,6 +18,16 @@
             <summary>
             根Manifest
             </summary>
+        </member>
+        <member name="M:Jerry.JABMgr.CheckSaveAssets``1(System.String,System.String,System.Action{``0})">
+            <summary>
+            检查已经保存的资源，要在检查过参数之后使用
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="assetBundleName"></param>
+            <param name="assetName"></param>
+            <param name="callback"></param>
+            <returns>是否有保存</returns>
         </member>
         <member name="F:Jerry.JABMgr.m_LoadedAssetBundles">
             <summary>
@@ -417,6 +330,14 @@
             <param name="isAdditive"></param>
             <returns></returns>
         </member>
+        <member name="M:Jerry.JABMgr.CheckLoadArgsAndManifest(System.String,System.String)">
+            <summary>
+            检查加载参数和Manifest
+            </summary>
+            <param name="assetBundleName">bundle</param>
+            <param name="assetName">资源名</param>
+            <returns>是否正常</returns>
+        </member>
         <member name="M:Jerry.JABMgr.IE_LoadAssetAsync``1(Jerry.JABLoadOperation,System.Action{``0},System.Action{System.Boolean})">
             <summary>
             异步加载协程
@@ -498,6 +419,103 @@
             Variants which is used to define the active variants.
             </summary>
         </member>
+        <member name="T:Jerry.BundleInfo">
+            <summary>
+            Bundle信息
+            </summary>
+        </member>
+        <member name="F:Jerry.BundleInfo.bundleName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:Jerry.BundleInfo.bundleSize">
+            <summary>
+            大小
+            </summary>
+        </member>
+        <member name="F:Jerry.BundleInfo.hash">
+            <summary>
+            Hash
+            </summary>
+        </member>
+        <member name="F:Jerry.BundleInfo.packageLev">
+            <summary>
+            分包等级
+            </summary>
+        </member>
+        <member name="M:Jerry.BundleInfo.ToStr">
+            <summary>
+            整理成存档字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jerry.BundleInfoMgr">
+            <summary>
+            Bundle信息管理
+            </summary>
+        </member>
+        <member name="F:Jerry.BundleInfoMgr.m_InfoList">
+            <summary>
+            信息列表
+            </summary>
+        </member>
+        <member name="F:Jerry.BundleInfoMgr.m_VersionFileName">
+            <summary>
+            版本信息文件名
+            </summary>
+        </member>
+        <member name="F:Jerry.BundleInfoMgr.m_Version">
+            <summary>
+            本地资源版本号，首包不含资源就用这个
+            </summary>
+        </member>
+        <member name="F:Jerry.BundleInfoMgr.m_CurPackageLev">
+            <summary>
+            当前分包等级
+            </summary>
+        </member>
+        <member name="F:Jerry.BundleInfoMgr.isDirty">
+            <summary>
+            是否有未存档数据
+            </summary>
+        </member>
+        <member name="M:Jerry.BundleInfoMgr.ChangePackageLev(System.Int32,System.Boolean)">
+            <summary>
+            下载完才能修改
+            </summary>
+            <param name="lev"></param>
+            <param name="trySave"></param>
+        </member>
+        <member name="M:Jerry.BundleInfoMgr.ChangeOrAddData(Jerry.BundleInfo,System.Boolean)">
+            <summary>
+            修改或增加数据
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:Jerry.BundleInfoMgr.SaveData(System.Boolean)">
+            <summary>
+            保存数据
+            </summary>
+            <param name="force"></param>
+        </member>
+        <member name="M:Jerry.BundleInfoMgr.CheckFirstPackage">
+            <summary>
+            检查首包
+            </summary>
+            <returns>是否是第一次整理资源</returns>
+        </member>
+        <member name="M:Jerry.BundleInfoMgr.LoadInfoList(System.String[])">
+            <summary>
+            加载数据
+            </summary>
+            <param name="readFiles"></param>
+        </member>
+        <member name="P:Jerry.BundleInfoMgr.InfoList">
+            <summary>
+            信息列表
+            </summary>
+        </member>
         <member name="T:Jerry.JABLoadOperation">
             <summary>
             <para>AssetBundle加载操作</para>
@@ -549,11 +567,6 @@
         <member name="F:Jerry.JABLoadResOperation.m_Request">
             <summary>
             Asset加载请求，从Bundle里请求或有Bundle后请求
-            </summary>
-        </member>
-        <member name="F:Jerry.JABLoadResOperation.m_HadReportError">
-            <summary>
-            报过错了，避免反复报错
             </summary>
         </member>
         <member name="F:Jerry.JABLoadResOperation.m_Canceld">
