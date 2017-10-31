@@ -163,6 +163,13 @@
             是否有未存档数据
             </summary>
         </member>
+        <member name="M:Jerry.BundleInfoMgr.Names2Infos(System.Collections.Generic.List{System.String})">
+            <summary>
+            不存在的将忽略
+            </summary>
+            <param name="bundleNames"></param>
+            <returns></returns>
+        </member>
         <member name="M:Jerry.BundleInfoMgr.ChangePackageLev(System.Int32,System.Boolean)">
             <summary>
             下载完才能修改
@@ -332,12 +339,12 @@
             <param name="onlyUseLocalRes"></param>
             <param name="afterJABMgrInit">回调，返回【是否加载Manifest成功】和【是否第一次解析（需要整理首包资源）】</param>
         </member>
-        <member name="M:Jerry.JABMgr.CheckFirstPackage(System.Boolean,System.Action{System.String,System.Single,System.Int32,System.Int32},System.Action{System.Boolean})">
+        <member name="M:Jerry.JABMgr.CheckFirstPackage(System.Boolean,System.Action{System.Single,System.Int64,System.Int64},System.Action{System.Boolean})">
             <summary>
             检查首包
             </summary>
             <param name="isFirst">是否是第一次解析</param>
-            <param name="refreshPro">刷新进度回调，参数：当前资源名-当前资源进度-总进度分子-总进度分母</param>
+            <param name="refreshPro">刷新进度回调，参数：进度-分子-分母</param>
             <param name="afterCheckFirstPackage">检查首包完成，参数是是否需要存档</param>
         </member>
         <member name="M:Jerry.JABMgr.CheckBackgroundDownload">
@@ -365,32 +372,37 @@
             <param name="packageLev"></param>
             <returns></returns>
         </member>
-        <member name="M:Jerry.JABMgr.CheckPackageLevOK(System.Int32,System.Action{System.String,System.Single,System.Int32,System.Int32},System.Action{System.Boolean})">
+        <member name="M:Jerry.JABMgr.CheckPackageLevOK(System.Int32,System.Action{System.Single,System.Int64,System.Int64},System.Action{System.Boolean})">
             <summary>
             检查某个分包等级是否OK，如果有下载，会把后台下载停掉
             </summary>
             <param name="lev">分包等级</param>
-            <param name="refreshPro">刷新进度回调，参数：当前资源名-当前资源进度-总进度分子-总进度分母</param>
+            <param name="refreshPro">刷新进度回调，参数：进度-分子-分母</param>
             <param name="afterCheckPackageLevOK">分包等级是否OK回调，参数是是否有加载东西</param>
         </member>
-        <member name="F:Jerry.JABMgr.m_BundleNamesToLoad">
+        <member name="F:Jerry.JABMgr.m_BundlesToLoad">
             <summary>
-            还将要加载的名字
+            还将要加载的Bundle
             </summary>
         </member>
-        <member name="F:Jerry.JABMgr.m_BundleNamesToLoadCnt">
+        <member name="F:Jerry.JABMgr.m_BundlesToLoadTotalSize">
             <summary>
             要加载的总量
             </summary>
         </member>
-        <member name="F:Jerry.JABMgr.m_CurBundleName">
+        <member name="F:Jerry.JABMgr.m_BundlesLoadedSize">
             <summary>
-            正在加载的资源名
+            加载完成的大小
             </summary>
         </member>
-        <member name="F:Jerry.JABMgr.m_CurBundlePro">
+        <member name="F:Jerry.JABMgr.m_BundlesLoadedSizeD">
             <summary>
-            正在加载的资源进度
+            加载好的大小
+            </summary>
+        </member>
+        <member name="F:Jerry.JABMgr.m_NeedCheckLoadedButNotMark">
+            <summary>
+            是否需要检查加载好了但是未标记
             </summary>
         </member>
         <member name="F:Jerry.JABMgr.m_LoadFinish">
@@ -410,10 +422,10 @@
         </member>
         <member name="F:Jerry.JABMgr.m_RefreshPro">
             <summary>
-            刷新进度，参数：当前资源名-当前资源进度-总进度分子-总进度分母
+            刷新进度，参数：进度-分子-分母
             </summary>
         </member>
-        <member name="M:Jerry.JABMgr.LoadBundles(System.Collections.Generic.List{System.String},System.Action{System.String,System.Single,System.Int32,System.Int32},System.Action{System.Boolean},System.Boolean,System.Boolean)">
+        <member name="M:Jerry.JABMgr.LoadBundles(System.Collections.Generic.List{System.String},System.Action{System.Single,System.Int64,System.Int64},System.Action{System.Boolean},System.Boolean,System.Boolean)">
             <summary>
             加载Bundle列表
             </summary>
@@ -423,12 +435,12 @@
             <param name="fromLocalPath"></param>
             <param name="tryUnload"></param>
         </member>
-        <member name="M:Jerry.JABMgr.IE_LoadBundles(System.Collections.Generic.List{System.String},System.Action{System.String,System.Single,System.Int32,System.Int32},System.Action{System.Boolean},System.Boolean,System.Boolean)">
+        <member name="M:Jerry.JABMgr.IE_LoadBundles(System.Collections.Generic.List{Jerry.BundleInfo},System.Action{System.Single,System.Int64,System.Int64},System.Action{System.Boolean},System.Boolean,System.Boolean)">
             <summary>
             加载Bundle列表
             </summary>
             <param name="bundles">要加载的bundle列表</param>
-            <param name="refreshPro">刷新进度回调，参数：当前资源名-当前资源进度-总进度分子-总进度分母</param>
+            <param name="refreshPro">刷新进度回调，参数：进度-分子-分母</param>
             <param name="callback">完成回调，是否有资源加载</param>
             <param name="fromLocalPath">是否从本地路径，整理首包的时候需要</param>
             <param name="tryUnload">是否尝试卸载覆盖，资源更新的时候需要</param>
@@ -543,7 +555,7 @@
             <param name="levelCallBack">关卡加载回调</param>
             <returns></returns>
         </member>
-        <member name="M:Jerry.JABMgr.CheckResUpdate(System.Action{System.String,System.Single,System.Int32,System.Int32},System.Action{System.Boolean})">
+        <member name="M:Jerry.JABMgr.CheckResUpdate(System.Action{System.Single,System.Int64,System.Int64},System.Action{System.Boolean})">
             <summary>
             检查资源更新
             </summary>
