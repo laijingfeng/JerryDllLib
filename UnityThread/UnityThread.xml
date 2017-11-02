@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UnityThread</name>
+    </assembly>
+    <members>
+        <member name="M:Jerry.UnityThread.Start(System.Action)">
+            <summary>
+            开始
+            </summary>
+            <param name="finishCallback"></param>
+        </member>
+        <member name="M:Jerry.UnityThread.Abort">
+            <summary>
+            停止
+            </summary>
+        </member>
+    </members>
+</doc>
