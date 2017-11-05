@@ -4,5 +4,34 @@
         <name>AudioMgr</name>
     </assembly>
     <members>
+        <member name="M:Jerry.MyAudioSource.IsMute">
+            <summary>
+            是否静音
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.MyAudioSource.SetMute(System.Boolean)">
+            <summary>
+            设置静音
+            </summary>
+            <param name="isMute"></param>
+        </member>
+        <member name="M:Jerry.MyAudioSource.SetVol(System.Single)">
+            <summary>
+            设置音量
+            </summary>
+            <param name="vol"></param>
+        </member>
+        <member name="M:Jerry.MyAudioSource.PauseOrUnPause(System.Boolean)">
+            <summary>
+            暂停或继续
+            </summary>
+            <param name="pause"></param>
+        </member>
+        <member name="M:Jerry.MyAudioSource.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
     </members>
 </doc>
