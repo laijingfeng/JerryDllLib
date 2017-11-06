@@ -4,104 +4,6 @@
         <name>JerryAB</name>
     </assembly>
     <members>
-        <member name="T:Jerry.JABLoadOperation">
-            <summary>
-            <para>AssetBundle加载操作</para>
-            <para>加载资源(Asset)的时候，等候AssetBundle的加载成功，再去AssetBundle里加载</para>
-            </summary>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.Update">
-            <summary>
-            <para>等候m_Request构建好</para>
-            <para>返回值表示是否还需要更新</para>
-            <para>出错了将不再更新</para>
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.IsDone">
-            <summary>
-            <para>是否加载完成</para>
-            <para>为了避免阻塞，报错了是true</para>
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.Progress">
-            <summary>
-            进度
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.GetRequest">
-            <summary>
-            资源请求
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.SetCancel">
-            <summary>
-            取消
-            </summary>
-        </member>
-        <member name="T:Jerry.JABLoadResOperation">
-            <summary>
-            资源加载操作
-            </summary>
-        </member>
-        <member name="F:Jerry.JABLoadResOperation.m_LoadedAssetbundle">
-            <summary>
-            加载好的Bundle
-            </summary>
-        </member>
-        <member name="F:Jerry.JABLoadResOperation.m_Request">
-            <summary>
-            Asset加载请求，从Bundle里请求或有Bundle后请求
-            </summary>
-        </member>
-        <member name="F:Jerry.JABLoadResOperation.m_Canceld">
-            <summary>
-            被取消
-            </summary>
-        </member>
-        <member name="M:Jerry.JABLoadResOperation.Update">
-            <summary>
-            true表示还要子类处理
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadResOperation.IsDone">
-            <summary>
-            是否完成
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadResOperation.Progress">
-            <summary>
-            进度
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:Jerry.JABLoadLevelOperation">
-            <summary>
-            Level加载操作
-            </summary>
-        </member>
-        <member name="T:Jerry.JABLoadAssetOperation">
-            <summary>
-            Asset加载操作
-            </summary>
-        </member>
-        <member name="M:Jerry.JABLoadAssetOperation.Update">
-            <summary>
-            Returns true if more Update calls are required.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadManifestOperation.Update">
-            <summary>
-            Manifest的特殊化处理
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:Jerry.BundleInfo">
             <summary>
             Bundle信息
@@ -206,6 +108,104 @@
             信息列表
             </summary>
         </member>
+        <member name="T:Jerry.JABLoadOperation">
+            <summary>
+            <para>AssetBundle加载操作</para>
+            <para>加载资源(Asset)的时候，等候AssetBundle的加载成功，再去AssetBundle里加载</para>
+            </summary>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.Update">
+            <summary>
+            <para>等候m_Request构建好</para>
+            <para>返回值表示是否还需要更新</para>
+            <para>出错了将不再更新</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.IsDone">
+            <summary>
+            <para>是否加载完成</para>
+            <para>为了避免阻塞，报错了是true</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.Progress">
+            <summary>
+            进度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.GetRequest">
+            <summary>
+            资源请求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.SetCancel">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="T:Jerry.JABLoadResOperation">
+            <summary>
+            资源加载操作
+            </summary>
+        </member>
+        <member name="F:Jerry.JABLoadResOperation.m_LoadedAssetbundle">
+            <summary>
+            加载好的Bundle
+            </summary>
+        </member>
+        <member name="F:Jerry.JABLoadResOperation.m_Request">
+            <summary>
+            Asset加载请求，从Bundle里请求或有Bundle后请求
+            </summary>
+        </member>
+        <member name="F:Jerry.JABLoadResOperation.m_Canceld">
+            <summary>
+            被取消
+            </summary>
+        </member>
+        <member name="M:Jerry.JABLoadResOperation.Update">
+            <summary>
+            true表示还要子类处理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadResOperation.IsDone">
+            <summary>
+            是否完成
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadResOperation.Progress">
+            <summary>
+            进度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jerry.JABLoadLevelOperation">
+            <summary>
+            Level加载操作
+            </summary>
+        </member>
+        <member name="T:Jerry.JABLoadAssetOperation">
+            <summary>
+            Asset加载操作
+            </summary>
+        </member>
+        <member name="M:Jerry.JABLoadAssetOperation.Update">
+            <summary>
+            Returns true if more Update calls are required.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadManifestOperation.Update">
+            <summary>
+            Manifest的特殊化处理
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Jerry.JABMgr">
             <summary>
             AssetBundle管理器
@@ -246,15 +246,14 @@
             排队加载的资源
             </summary>
         </member>
-        <member name="F:Jerry.JABMgr.m_SameLoadBundleCnt">
+        <member name="F:Jerry.JABMgr.m_SameTimeLoadBundleCnt">
             <summary>
             <para>同时加载Bundle的数量</para>
-            <para>TODO:可以在初始化的时候根据机器性能设置不同的数</para>
             </summary>
         </member>
-        <member name="F:Jerry.JABMgr.m_BackgroundSameLoadBundleCnt">
+        <member name="F:Jerry.JABMgr.m_BackgroundSameTimeLoadBundleCnt">
             <summary>
-            后台同时加载Bundle的数量，要小于等于m_SameLoadBundleCnt
+            后台同时加载Bundle的数量，要小于等于m_SameTimeLoadBundleCnt
             </summary>
         </member>
         <member name="F:Jerry.JABMgr.m_CanBackgroundLoading">
@@ -328,7 +327,7 @@
             暂停加载
             </summary>
         </member>
-        <member name="M:Jerry.JABMgr.Init(System.String,System.String,System.String,System.String,System.Boolean,System.Action{System.Boolean,System.Boolean})">
+        <member name="M:Jerry.JABMgr.Init(System.String,System.String,System.String,System.String,System.Boolean,System.Action{System.Boolean,System.Boolean},System.Int32,System.Int32)">
             <summary>
             初始化
             </summary>
@@ -338,6 +337,8 @@
             <param name="persistentDataPath"></param>
             <param name="onlyUseLocalRes"></param>
             <param name="afterJABMgrInit">回调，返回【是否加载Manifest成功】和【是否第一次解析（需要整理首包资源）】</param>
+            <param name="sameTimeLoadBundleCnt">同时下载数量</param>
+            <param name="backgroundSameTimeLoadBundleCnt">后台同时下载数量</param>
         </member>
         <member name="M:Jerry.JABMgr.CheckFirstPackage(System.Boolean,System.Action{System.Single,System.Int64,System.Int64},System.Action{System.Boolean})">
             <summary>
