@@ -4,6 +4,13 @@
         <name>JerryUtil</name>
     </assembly>
     <members>
+        <member name="M:Jerry.UnityWebRequestUtil.Get(System.String,System.Action{System.Int64,System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="callback">code-rsp-err</param>
+        </member>
         <member name="M:Jerry.JerryMath.Contains(UnityEngine.Vector3[],UnityEngine.Vector3)">
             <summary>
             <para>计算点是否在一个区域内部</para>
