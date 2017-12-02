@@ -141,11 +141,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Jerry.JABLoadOperation.SetCancel">
-            <summary>
-            取消
-            </summary>
-        </member>
         <member name="T:Jerry.JABLoadResOperation">
             <summary>
             资源加载操作
@@ -159,11 +154,6 @@
         <member name="F:Jerry.JABLoadResOperation.m_Request">
             <summary>
             Asset加载请求，从Bundle里请求或有Bundle后请求
-            </summary>
-        </member>
-        <member name="F:Jerry.JABLoadResOperation.m_Canceld">
-            <summary>
-            被取消
             </summary>
         </member>
         <member name="M:Jerry.JABLoadResOperation.Update">
@@ -324,7 +314,7 @@
         </member>
         <member name="F:Jerry.JABMgr.m_PauseLoading">
             <summary>
-            暂停加载
+            暂停加载，暂停后的请求不再给回调
             </summary>
         </member>
         <member name="M:Jerry.JABMgr.Init(System.String,System.String,System.String,System.String,System.Boolean,System.Action{System.Boolean,System.Boolean},System.Int32,System.Int32)">
@@ -581,11 +571,22 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Jerry.JABMgr.UnloadAssetBundle(System.Collections.Generic.List{System.String})">
+        <member name="M:Jerry.JABMgr.UnloadAssetBundles(System.Collections.Generic.List{System.String},System.Action{System.Single,System.Int64,System.Int64},System.Action)">
             <summary>
             卸载Bundle，切换场景的时候调用
             </summary>
             <param name="remainBundleNames"></param>
+            <param name="refreshPro"></param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Jerry.JABMgr.IE_UnloadAssetBundles(System.Collections.Generic.List{System.String},System.Action{System.Single,System.Int64,System.Int64},System.Action)">
+            <summary>
+            卸载Bundle，切换场景的时候调用
+            </summary>
+            <param name="remainBundleNames"></param>
+            <param name="refreshPro"></param>
+            <param name="callback"></param>
+            <returns></returns>
         </member>
         <member name="M:Jerry.JABMgr.IsBundleLoaded(System.String)">
             <summary>
@@ -625,6 +626,11 @@
         <member name="P:Jerry.JABMgr.ActiveVariants">
             <summary>
             Variants which is used to define the active variants.
+            </summary>
+        </member>
+        <member name="P:Jerry.JABMgr.PauseLoading">
+            <summary>
+            暂停加载
             </summary>
         </member>
     </members>
