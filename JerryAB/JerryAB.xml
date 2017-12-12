@@ -4,6 +4,94 @@
         <name>JerryAB</name>
     </assembly>
     <members>
+        <member name="T:Jerry.JABLoadOperation">
+            <summary>
+            <para>AssetBundle加载操作</para>
+            <para>加载资源(Asset)的时候，等候AssetBundle的加载成功，再去AssetBundle里加载</para>
+            </summary>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.Update">
+            <summary>
+            <para>等候m_Request构建好</para>
+            <para>返回值表示是否还需要更新</para>
+            <para>出错了将不再更新</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.IsDone">
+            <summary>
+            <para>是否加载完成</para>
+            <para>为了避免阻塞，报错了是true</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.Progress">
+            <summary>
+            进度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.GetRequest">
+            <summary>
+            资源请求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jerry.JABLoadResOperation">
+            <summary>
+            资源加载操作
+            </summary>
+        </member>
+        <member name="F:Jerry.JABLoadResOperation.m_LoadedAssetbundle">
+            <summary>
+            加载好的Bundle
+            </summary>
+        </member>
+        <member name="F:Jerry.JABLoadResOperation.m_Request">
+            <summary>
+            Asset加载请求，从Bundle里请求或有Bundle后请求
+            </summary>
+        </member>
+        <member name="M:Jerry.JABLoadResOperation.Update">
+            <summary>
+            true表示还要子类处理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadResOperation.IsDone">
+            <summary>
+            是否完成
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadResOperation.Progress">
+            <summary>
+            进度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jerry.JABLoadLevelOperation">
+            <summary>
+            Level加载操作
+            </summary>
+        </member>
+        <member name="T:Jerry.JABLoadAssetOperation">
+            <summary>
+            Asset加载操作
+            </summary>
+        </member>
+        <member name="M:Jerry.JABLoadAssetOperation.Update">
+            <summary>
+            Returns true if more Update calls are required.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadManifestOperation.Update">
+            <summary>
+            Manifest的特殊化处理
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Jerry.BundleInfo">
             <summary>
             Bundle信息
@@ -107,94 +195,6 @@
             <summary>
             信息列表
             </summary>
-        </member>
-        <member name="T:Jerry.JABLoadOperation">
-            <summary>
-            <para>AssetBundle加载操作</para>
-            <para>加载资源(Asset)的时候，等候AssetBundle的加载成功，再去AssetBundle里加载</para>
-            </summary>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.Update">
-            <summary>
-            <para>等候m_Request构建好</para>
-            <para>返回值表示是否还需要更新</para>
-            <para>出错了将不再更新</para>
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.IsDone">
-            <summary>
-            <para>是否加载完成</para>
-            <para>为了避免阻塞，报错了是true</para>
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.Progress">
-            <summary>
-            进度
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.GetRequest">
-            <summary>
-            资源请求
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:Jerry.JABLoadResOperation">
-            <summary>
-            资源加载操作
-            </summary>
-        </member>
-        <member name="F:Jerry.JABLoadResOperation.m_LoadedAssetbundle">
-            <summary>
-            加载好的Bundle
-            </summary>
-        </member>
-        <member name="F:Jerry.JABLoadResOperation.m_Request">
-            <summary>
-            Asset加载请求，从Bundle里请求或有Bundle后请求
-            </summary>
-        </member>
-        <member name="M:Jerry.JABLoadResOperation.Update">
-            <summary>
-            true表示还要子类处理
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadResOperation.IsDone">
-            <summary>
-            是否完成
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadResOperation.Progress">
-            <summary>
-            进度
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:Jerry.JABLoadLevelOperation">
-            <summary>
-            Level加载操作
-            </summary>
-        </member>
-        <member name="T:Jerry.JABLoadAssetOperation">
-            <summary>
-            Asset加载操作
-            </summary>
-        </member>
-        <member name="M:Jerry.JABLoadAssetOperation.Update">
-            <summary>
-            Returns true if more Update calls are required.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadManifestOperation.Update">
-            <summary>
-            Manifest的特殊化处理
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:Jerry.JABMgr">
             <summary>
@@ -335,7 +335,7 @@
             检查首包
             </summary>
             <param name="isFirst">是否是第一次解析</param>
-            <param name="refreshPro">刷新进度回调，参数：进度-分子-分母</param>
+            <param name="refreshPro">刷新进度回调，参数：进度[0,1]-分子-分母</param>
             <param name="afterCheckFirstPackage">检查首包完成，参数是是否需要存档</param>
         </member>
         <member name="M:Jerry.JABMgr.CheckBackgroundDownload">
@@ -368,7 +368,7 @@
             检查某个分包等级是否OK，如果有下载，会把后台下载停掉
             </summary>
             <param name="lev">分包等级</param>
-            <param name="refreshPro">刷新进度回调，参数：进度-分子-分母</param>
+            <param name="refreshPro">刷新进度回调，参数：进度[0,1]-分子-分母</param>
             <param name="afterCheckPackageLevOK">分包等级是否OK回调，参数是是否有加载东西</param>
         </member>
         <member name="F:Jerry.JABMgr.m_BundlesToLoad">
@@ -413,7 +413,7 @@
         </member>
         <member name="F:Jerry.JABMgr.m_RefreshPro">
             <summary>
-            刷新进度，参数：进度-分子-分母
+            刷新进度，参数：进度[0,1]-分子-分母
             </summary>
         </member>
         <member name="M:Jerry.JABMgr.LoadBundles(System.Collections.Generic.List{System.String},System.Action{System.Single,System.Int64,System.Int64},System.Action{System.Boolean},System.Boolean,System.Boolean)">
@@ -423,7 +423,7 @@
             <param name="bundles"></param>
             <param name="refreshPro"></param>
             <param name="callback"></param>
-            <param name="fromLocalPath"></param>
+            <param name="fromLocalPath">是否从本地路径，整理首包的时候需要</param>
             <param name="tryUnload"></param>
         </member>
         <member name="M:Jerry.JABMgr.IE_LoadBundles(System.Collections.Generic.List{Jerry.BundleInfo},System.Action{System.Single,System.Int64,System.Int64},System.Action{System.Boolean},System.Boolean,System.Boolean)">
@@ -444,7 +444,7 @@
             <param name="bundleName"></param>
             <param name="success"></param>
         </member>
-        <member name="M:Jerry.JABMgr.RefreshTip(System.Boolean)">
+        <member name="M:Jerry.JABMgr.RefreshTip">
             <summary>
             刷新提示
             </summary>
@@ -456,22 +456,24 @@
             <param name="assetBundleName"></param>
             <param name="isLoadingAssetBundleManifest">是否是加载Manifest</param>
         </member>
-        <member name="M:Jerry.JABMgr.LoadSingleBundle(System.String,System.Boolean,System.Boolean)">
+        <member name="M:Jerry.JABMgr.LoadSingleBundle(System.String,System.Boolean,System.String,System.Boolean)">
             <summary>
             加载单个bundle，返回是否已经加载好了
             </summary>
             <param name="assetBundleName">Bundle名称</param>
-            <param name="fromLocalPath">是否从本地加载</param>
+            <param name="fromLocalPath">是否从本地路径，整理首包的时候需要</param>
+            <param name="hashCode">对应fromLocalPath用</param>
             <param name="tryUnload">如果已存在，尝试卸载，资源更新的时候，要能够覆盖</param>
             <returns></returns>
         </member>
-        <member name="M:Jerry.JABMgr.LoadAssetBundleInternal(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+        <member name="M:Jerry.JABMgr.LoadAssetBundleInternal(System.String,System.Boolean,System.Boolean,System.String,System.Boolean,System.Boolean)">
             <summary>
             
             </summary>
             <param name="assetBundleName"></param>
             <param name="isLoadingAssetBundleManifest"></param>
-            <param name="fromLocalPath"></param>
+            <param name="fromLocalPath">是否从本地路径，整理首包的时候需要</param>
+            <param name="hashCode">对应fromLocalPath用</param>
             <param name="tryUnload"></param>
             <param name="jumpReady"></param>
             <returns></returns>
