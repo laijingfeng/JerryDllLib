@@ -4,94 +4,6 @@
         <name>JerryAB</name>
     </assembly>
     <members>
-        <member name="T:Jerry.JABLoadOperation">
-            <summary>
-            <para>AssetBundle加载操作</para>
-            <para>加载资源(Asset)的时候，等候AssetBundle的加载成功，再去AssetBundle里加载</para>
-            </summary>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.Update">
-            <summary>
-            <para>等候m_Request构建好</para>
-            <para>返回值表示是否还需要更新</para>
-            <para>出错了将不再更新</para>
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.IsDone">
-            <summary>
-            <para>是否加载完成</para>
-            <para>为了避免阻塞，报错了是true</para>
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.Progress">
-            <summary>
-            进度
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadOperation.GetRequest">
-            <summary>
-            资源请求
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:Jerry.JABLoadResOperation">
-            <summary>
-            资源加载操作
-            </summary>
-        </member>
-        <member name="F:Jerry.JABLoadResOperation.m_LoadedAssetbundle">
-            <summary>
-            加载好的Bundle
-            </summary>
-        </member>
-        <member name="F:Jerry.JABLoadResOperation.m_Request">
-            <summary>
-            Asset加载请求，从Bundle里请求或有Bundle后请求
-            </summary>
-        </member>
-        <member name="M:Jerry.JABLoadResOperation.Update">
-            <summary>
-            true表示还要子类处理
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadResOperation.IsDone">
-            <summary>
-            是否完成
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadResOperation.Progress">
-            <summary>
-            进度
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:Jerry.JABLoadLevelOperation">
-            <summary>
-            Level加载操作
-            </summary>
-        </member>
-        <member name="T:Jerry.JABLoadAssetOperation">
-            <summary>
-            Asset加载操作
-            </summary>
-        </member>
-        <member name="M:Jerry.JABLoadAssetOperation.Update">
-            <summary>
-            Returns true if more Update calls are required.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Jerry.JABLoadManifestOperation.Update">
-            <summary>
-            Manifest的特殊化处理
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:Jerry.BundleInfo">
             <summary>
             Bundle信息
@@ -195,6 +107,94 @@
             <summary>
             信息列表
             </summary>
+        </member>
+        <member name="T:Jerry.JABLoadOperation">
+            <summary>
+            <para>AssetBundle加载操作</para>
+            <para>加载资源(Asset)的时候，等候AssetBundle的加载成功，再去AssetBundle里加载</para>
+            </summary>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.Update">
+            <summary>
+            <para>等候m_Request构建好</para>
+            <para>返回值表示是否还需要更新</para>
+            <para>出错了将不再更新</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.IsDone">
+            <summary>
+            <para>是否加载完成</para>
+            <para>为了避免阻塞，报错了是true</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.Progress">
+            <summary>
+            进度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadOperation.GetRequest">
+            <summary>
+            资源请求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jerry.JABLoadResOperation">
+            <summary>
+            资源加载操作
+            </summary>
+        </member>
+        <member name="F:Jerry.JABLoadResOperation.m_LoadedAssetbundle">
+            <summary>
+            加载好的Bundle
+            </summary>
+        </member>
+        <member name="F:Jerry.JABLoadResOperation.m_Request">
+            <summary>
+            Asset加载请求，从Bundle里请求或有Bundle后请求
+            </summary>
+        </member>
+        <member name="M:Jerry.JABLoadResOperation.Update">
+            <summary>
+            true表示还要子类处理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadResOperation.IsDone">
+            <summary>
+            是否完成
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadResOperation.Progress">
+            <summary>
+            进度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jerry.JABLoadLevelOperation">
+            <summary>
+            Level加载操作
+            </summary>
+        </member>
+        <member name="T:Jerry.JABLoadAssetOperation">
+            <summary>
+            Asset加载操作
+            </summary>
+        </member>
+        <member name="M:Jerry.JABLoadAssetOperation.Update">
+            <summary>
+            Returns true if more Update calls are required.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jerry.JABLoadManifestOperation.Update">
+            <summary>
+            Manifest的特殊化处理
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Jerry.JABMgr">
             <summary>
